@@ -26,7 +26,7 @@ namespace AISPresentationEva
 
 
                 //string file = TxtStudentID.Text;
-                string fileName = string.Format(@"{0}-{1}-{2}-{3}-{4}.docx", TxtCourseCode.Text, txtSemester.Text, DateTime.Today.Year.ToString(), TxtStudentID.Text, TxtTopicId.Text);
+                string fileName = string.Format(@"{0}-{1}-{2}-{3}.docx", TxtCourseCode.Text, txtSemester.Text, DateTime.Today.Year.ToString(), TxtStudentID.Text);
                 var doc = DocX.Create(Server.MapPath(fileName));
 
                 doc.InsertParagraph("Student ID: " + TxtStudentID.Text);
@@ -645,15 +645,6 @@ namespace AISPresentationEva
         {
             args.IsValid = rbQuestionsE.Checked || rbQuestionsG.Checked || rbQuestionsF.Checked || rbQuestionsP.Checked;
         }
-
-
-
-
-
-
-
-
-
 
     }
 }

@@ -7,6 +7,10 @@
 	<title>Online Presentation Rubric</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous" />
 	<script src="https://code.jquery.com/jquery-3.3.1.js" ></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
 		function Focus(element, score) {
 			document.getElementById('hdfFocus').value = score;
@@ -48,8 +52,6 @@
 			Total();
 		}
 
-
-
 		function Eye(element, score) {
 			document.getElementById('hdfEye').value = score;
 
@@ -79,8 +81,6 @@
 
 			Total();
 		}
-
-
 
 		function Knowledge(element, score) {
 			document.getElementById('hdfKnowledge').value = score;
@@ -342,7 +342,6 @@
 			</script>
 
 
-
 </head>
 <body>
 	<form id="form1" runat="server">		
@@ -352,76 +351,90 @@
 			</div>
 
 
+        <div  class="container">
 
-		<div class="container mt-3">
-			<asp:ValidationSummary ID="ValidationSummary2" runat="server" CssClass="alert alert-danger mt-2 mb-2"/>
-			<div class="row">
+		    <div id="zero"  class="card mb-3" style="background-color:#222930; color: #D43F3F;  font-size: large" >
 
-				<div class="col-sm">
+			    <asp:ValidationSummary ID="ValidationSummary2" runat="server" CssClass="alert alert-danger mt-2 mb-2"/>
+
+                <h3 class="card-header"> 
+                    <span class="badge badge-primary badge-pill">1. Basic information: Complete the information about the presentation </span>
+                </h3>
+
+                <div class="card-body" >
+
+<div class="row">
+
+				    <div class="col-sm">    
 					
-					<div class="form-group">
-						<label for="TxtStudentID">Student ID</label>                             
-						 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please enter Student ID" Text="*" ForeColor="Red" ControlToValidate="TxtStudentID"></asp:RequiredFieldValidator>
-						<asp:TextBox ID="TxtStudentID" runat="server" class="form-control"></asp:TextBox>
+					    <div class="form-group">
+						    <label for="TxtStudentID">Student ID</label>                             
+						     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please enter Student ID" Text="*" ForeColor="Red" ControlToValidate="TxtStudentID"></asp:RequiredFieldValidator>
+						    <asp:TextBox ID="TxtStudentID" runat="server" class="form-control col-sm-9"></asp:TextBox>
 					   
-						<%--<div class="col-sm-5 messages"></div>--%>
-					</div>
+						    <%--<div class="col-sm-5 messages"></div>--%>
+					    </div>
 
-					<div class="form-group">
-						<label for="TxtStudentName">Student name</label>
-						<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please enter Student Name" Text="*" ForeColor="Red" ControlToValidate="TxtStudentName"></asp:RequiredFieldValidator>
-						<asp:TextBox ID="TxtStudentName" runat="server" class="form-control" ></asp:TextBox>
+					    <div class="form-group">
+						    <label for="TxtStudentName">Student name</label>
+						    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please enter Student Name" Text="*" ForeColor="Red" ControlToValidate="TxtStudentName"></asp:RequiredFieldValidator>
+						    <asp:TextBox ID="TxtStudentName" runat="server" class="form-control col-sm-9" ></asp:TextBox>
 						
-						<%--<div class="col-sm-5 messages"></div>--%>
-					</div>
+						    <%--<div class="col-sm-5 messages"></div>--%>
+					    </div>
 
-					<div class="form-group">
-						<label for="TxtCourseCode">Course Code</label>
-						<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Please enter Course code"  Text="*" ForeColor="Red" ControlToValidate="TxtCourseCode"></asp:RequiredFieldValidator>
-						<asp:TextBox ID="TxtCourseCode" runat="server" class="form-control" ></asp:TextBox>
+					    <div class="form-group">
+						    <label for="TxtCourseCode">Course Code</label>
+						    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Please enter Course code"  Text="*" ForeColor="Red" ControlToValidate="TxtCourseCode"></asp:RequiredFieldValidator>
+						    <asp:TextBox ID="TxtCourseCode" runat="server" class="form-control col-sm-9" ></asp:TextBox>
 						
-						<%--<div class="col-sm-5 messages"></div>--%>
-					</div>
+						    <%--<div class="col-sm-5 messages"></div>--%>
+					    </div>
 
-				</div>
+				    </div>
 
-				<div class="col-sm">
+				    <div class="col-sm">
 
-					<div class="form-group">
-						<label for="txtSemester">Semester</label>
-						<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Please enter Semester" Text="*" ForeColor="Red" ControlToValidate="txtSemester"></asp:RequiredFieldValidator>
-						<asp:TextBox ID="txtSemester" runat="server" class="form-control" ></asp:TextBox>
+					    <div class="form-group">
+						    <label for="txtSemester">Semester</label>
+						    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Please enter Semester" Text="*" ForeColor="Red" ControlToValidate="txtSemester"></asp:RequiredFieldValidator>
+						    <asp:TextBox ID="txtSemester" runat="server" class="form-control col-sm-5" ></asp:TextBox>
 						
-						<%--<div class="col-sm-5 messages"></div>--%>
-					</div>
+						    <%--<div class="col-sm-5 messages"></div>--%>
+					    </div>
 
-					<div class="form-group">
-						<label for="TxtTopicId">Topic Id</label>
-						<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Please enter Topic Id" Text="*" ForeColor="Red" ControlToValidate="TxtTopicId"></asp:RequiredFieldValidator>
-						<asp:TextBox ID="TxtTopicId" runat="server" class="form-control" ></asp:TextBox>
+					    <div class="form-group">
+						    <label for="TxtWeight">Presentation Weight</label>
+						    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Please enter Topic Id" Text="*" ForeColor="Red" ControlToValidate="TxtWeight"></asp:RequiredFieldValidator>
+						    <asp:TextBox ID="TxtWeight" runat="server" class="form-control col-sm-5" ></asp:TextBox>
 						
-						<%--<div class="col-sm-5 messages"></div>--%>
-					</div>
+						    <%--<div class="col-sm-5 messages"></div>--%>
+					    </div>
 
-					<div class="form-group">
-						<label for="TxtTopic">Topic of presentation</label>
-						<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Please enter Topic of presentation" Text="*" ForeColor="Red" ControlToValidate="TxtTopic"></asp:RequiredFieldValidator>
-						<asp:TextBox ID="TxtTopic" runat="server" class="form-control" ></asp:TextBox>
+					    <div class="form-group">
+						    <label for="TxtTopic">Topic of presentation</label>
+						    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Please enter Topic of presentation" Text="*" ForeColor="Red" ControlToValidate="TxtTopic"></asp:RequiredFieldValidator>
+						    <asp:TextBox ID="TxtTopic" runat="server" class="form-control col-sm-9" ></asp:TextBox>
 						
-						<%--<div class="col-sm-5 messages"></div>--%>
-					</div>
+						    <%--<div class="col-sm-5 messages"></div>--%>
+					    </div>
 
-				</div>
+				    </div>
 
-			</div>
+			    </div>
 
-		</div>
+                </div>
+			    
 
+		    </div>
 
-		<div class="container">
+        </div>
+
+		<div  class="container">
 			
-		  <div class="card text-white bg-info mb-3">
-			  <h3 class="card-header">Content structure / ideas</h3>
+		  <div id="uno" class="card mb-3" style="background-color:#222930; color: #D43F3F;  font-size: large" >
+			  <h3 class="card-header"><span class="badge badge-primary badge-pill">2. Content structure / ideas: select the points obtained by the student for each criteria </span></h3>
+
 			  <div class="card-body">
 					<%--<div class="row">
 
@@ -434,25 +447,25 @@
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbFocusE" Text="" Checked="false" GroupName="RadioGroupF" runat="server" onclick="Focus(this, 4)" />
-										<b>Excellent – </b> Purpose of presentation is clear from the outset. Supporting ideas maintain clear focus on the topic. <b>(+4)</b>
+										<span class="badge badge-primary badge-pill">+4</span><b> Excellent – </b> Purpose of presentation is clear from the outset. Supporting ideas maintain clear focus on the topic. 
 									</label>
 								</div>
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbFocusG" Text="" Checked="false" GroupName="RadioGroupF" runat="server" onclick="Focus(this, 3)" />
-										<b>Good – </b> Topic of the presentation is clear. Content generally supports the purpose <b>(+3)</b>
+										<span class="badge badge-primary badge-pill">+3</span><b> Good – </b> Topic of the presentation is clear. Content generally supports the purpose 
 									</label>
 								</div>
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbFocusF" Text="" Checked="false" GroupName="RadioGroupF" runat="server" onclick="Focus(this, 2)" />
-										<b>Fair – </b> Presentation lacks clear direction. Big ideas not specifically identified. <b>(+2)</b>
+										<span class="badge badge-primary badge-pill">+2</span><b> Fair – </b> Presentation lacks clear direction. Big ideas not specifically identified. 
 									</label>
 								</div>
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbFocusP" Text="" Checked="false" GroupName="RadioGroupF" runat="server" onclick="Focus(this, 1)" />
-										<b>Poor – </b> No focus at all. Audience cannot determine purpose of presentation. <b>(+1)</b>
+										<span class="badge badge-primary badge-pill">+1</span><b> Poor – </b> No focus at all. Audience cannot determine purpose of presentation. 
 									</label>
 								</div>
 								
@@ -465,25 +478,25 @@
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbOrganizationE" Text="" Checked="false" GroupName="RadioGroupO" runat="server" onclick="Organization(this, 4)" />
-										<b>Excellent – </b> Student presents information in logical, interesting sequence that audience follows. <b>(+4)</b>
+										<span class="badge badge-primary badge-pill">+4</span><b> Excellent – </b> Student presents information in logical, interesting sequence that audience follows. 
 									</label>
 								</div>
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbOrganizationG" Text="" Checked="false" GroupName="RadioGroupO" runat="server" onclick="Organization(this, 3)" />
-										<b>Good – </b> Student presents information in logical sequence that audience can follow <b>(+3)</b>
+										<span class="badge badge-primary badge-pill">+3</span><b> Good – </b> Student presents information in logical sequence that audience can follow 
 									</label>
 								</div>
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbOrganizationF" Text="" Checked="false" GroupName="RadioGroupO" runat="server" onclick="Organization(this, 2)" />
-										<b>Fair – </b> Audience has difficulty following because student jumps around. <b>(+2)</b>
+										<span class="badge badge-primary badge-pill">+2</span><b> Fair – </b> Audience has difficulty following because student jumps around. 
 									</label>
 								</div>
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbOrganizationP" Text="" Checked="false" GroupName="RadioGroupO" runat="server" onclick="Organization(this, 1)" />
-										<b>Poor – </b> Audience cannot understand because there is no sequence of information <b>(+1)</b>
+										<span class="badge badge-primary badge-pill">+1</span><b> Poor – </b> Audience cannot understand because there is no sequence of information 
 									</label>
 								</div>
 
@@ -495,25 +508,25 @@
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbVisualE" Text="" Checked="false" GroupName="RadioGroupV" runat="server" onclick="Visual(this, 4)" />
-										<b>Excellent – </b> Visual aids are readable, clear and professional looking, enhancing the message. <b>(+4)</b>
+										<span class="badge badge-primary badge-pill">+4</span><b> Excellent – </b> Visual aids are readable, clear and professional looking, enhancing the message. 
 									</label>
 								</div>
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbVisualG" Text="" Checked="false" GroupName="RadioGroupV" runat="server" onclick="Visual(this, 3)" />
-										<b>Good – </b> Visual aids are mostly readable, clear and professional looking. <b>(+3)</b>
+										<span class="badge badge-primary badge-pill">+3</span><b> Good – </b> Visual aids are mostly readable, clear and professional looking. 
 									</label>
 								</div>
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbVisualF" Text="" Checked="false" GroupName="RadioGroupV" runat="server" onclick="Visual(this, 2)" />
-										<b>Fair – </b> Significant problems with readability, clarity, professionalism of visual aids. <b>(+2)</b>
+										<span class="badge badge-primary badge-pill">+2</span><b> Fair – </b> Significant problems with readability, clarity, professionalism of visual aids. 
 									</label>
 								</div>
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbVisualP" Text="" Checked="false" GroupName="RadioGroupV" runat="server" onclick="Visual(this, 1)" />
-										<b>Poor – </b> Visual aids are all unreadable, unclear and/or unprofessional. <b>(+1)</b>
+										<span class="badge badge-primary badge-pill">+1</span><b> Poor – </b> Visual aids are all unreadable, unclear and/or unprofessional. 
 									</label>
 								</div>
 
@@ -525,25 +538,25 @@
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbQuestionE" Text="" Checked="false" GroupName="RadioGroupQ" runat="server" onclick="Question(this, 4)" />
-										<b>Excellent – </b> Speaker has prepared relevant questions for opening up the discussion and is able to stimulate discussion. <b>(+4)</b>
+										<span class="badge badge-primary badge-pill">+4</span><b> Excellent – </b> Speaker has prepared relevant questions for opening up the discussion and is able to stimulate discussion. 
 									</label>
 								</div>
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbQuestionG" Text="" Checked="false" GroupName="RadioGroupQ" runat="server" onclick="Question(this, 3)" />
-										<b>Good – </b> Speaker has prepared relevant questions for opening up the discussion and is somewhat able to stimulate discussion <b>(+3)</b>
+										<span class="badge badge-primary badge-pill">+3</span><b> Good – </b> Speaker has prepared relevant questions for opening up the discussion and is somewhat able to stimulate discussion 
 									</label>
 								</div>
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbQuestionF" Text="" Checked="false" GroupName="RadioGroupQ" runat="server" onclick="Question(this, 2)" />
-										<b>Fair – </b> Speaker has prepared questions but is not really able to stimulate discussion <b>(+2)</b>
+										<span class="badge badge-primary badge-pill">+2</span><b> Fair – </b> Speaker has prepared questions but is not really able to stimulate discussion 
 									</label>
 								</div>
 								<div class="form-check">
 									<label class="form-check-label">
 										<asp:RadioButton class="radioClass" id="rbQuestionP" Text="" Checked="false" GroupName="RadioGroupQ" runat="server" onclick="Question(this, 1)" />
-										<b>Poor – </b> Speaker has not prepared questions <b>(+1)</b>
+										<span class="badge badge-primary badge-pill">+1</span><b> Poor – </b> Speaker has not prepared questions 
 									</label>
 								</div>
 
@@ -555,8 +568,8 @@
 			  </div>
 		  </div> 
 
-		  <div class="card text-white bg-dark mb-3" >
-			  <h3 class="card-header">Language and Delivery</h3>
+		  <div id="dos" class="card mb-3" style="background-color:#222930; color: #00ACE9;  font-size: large" >
+              <h3 class="card-header"><span class="badge badge-primary badge-pill">3. Language and Delivery / ideas: select the points obtained by the student for each criteria </span></h3>
 			  <div class="card-body">
 
 				<fieldset>
@@ -565,25 +578,25 @@
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbEyeE" Text="" Checked="false" GroupName="RadioGroupE" runat="server" onclick="Eye(this, 4)" />
-							<b>Excellent – </b> Holds attention of entire audience with the use of direct eye contact, seldom looking at notes <b>(+4)</b>
+							<span class="badge badge-primary badge-pill">+4</span><b> Excellent – </b> Holds attention of entire audience with the use of direct eye contact, seldom looking at notes 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbEyeG" Text="" Checked="false" GroupName="RadioGroupE" runat="server" onclick="Eye(this, 3)" />
-							<b>Good – </b> Consistent use of direct eye contact with audience, but often returns to notes <b>(+3)</b>
+							<span class="badge badge-primary badge-pill">+3</span><b> Good – </b> Consistent use of direct eye contact with audience, but often returns to notes 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbEyeF" Text="" Checked="false" GroupName="RadioGroupE" runat="server" onclick="Eye(this, 2)" />
-							<b>Fair – </b> Displays minimal eye contact with audience, while reading mostly from the notes. <b>(+2)</b>
+							<span class="badge badge-primary badge-pill">+2</span><b> Fair – </b> Displays minimal eye contact with audience, while reading mostly from the notes. 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbEyeP" Text="" Checked="false" GroupName="RadioGroupE" runat="server" onclick="Eye(this, 1)" />
-							<b>Poor – </b> No eye contact with audience; entire presentation is read from notes <b>(+1)</b>
+							<span class="badge badge-primary badge-pill">+1</span><b> Poor – </b> No eye contact with audience; entire presentation is read from notes 
 						</label>
 					</div>
 
@@ -594,25 +607,25 @@
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbEnthuE" Text="" Checked="false" GroupName="RadioGroupEn" runat="server" onclick="Enthusiasm(this, 4)" />
-							<b>Excellent – </b> Demonstrates a strong, positive feeling about topic during entire presentation. <b>(+4)</b>
+							<span class="badge badge-primary badge-pill">+4</span><b> Excellent – </b> Demonstrates a strong, positive feeling about topic during entire presentation. 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbEnthuG" Text="" Checked="false" GroupName="RadioGroupEn" runat="server" onclick="Enthusiasm(this, 3)" />
-							<b>Good – </b> Mostly shows positive feelings about topic. <b>(+3)</b>
+							<span class="badge badge-primary badge-pill">+3</span><b> Good – </b> Mostly shows positive feelings about topic. 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbEnthuF" Text="" Checked="false" GroupName="RadioGroupEn" runat="server" onclick="Enthusiasm(this, 2)" />
-							<b>Fair – </b> Shows some negativity toward topic presented. <b>(+2)</b>
+							<span class="badge badge-primary badge-pill">+2</span><b> Fair – </b> Shows some negativity toward topic presented. 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbEnthuP" Text="" Checked="false" GroupName="RadioGroupEn" runat="server" onclick="Enthusiasm(this, 1)" />
-							<b>Poor – </b> Shows no interest in topic presented. <b>(+1)</b>
+							<span class="badge badge-primary badge-pill">+1</span><b> Poor – </b> Shows no interest in topic presented. 
 						</label>
 					</div>
 
@@ -623,25 +636,25 @@
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbElocutionE" Text="" Checked="false" GroupName="RadioGroupEl" runat="server" onclick="Elocution(this, 4)" />
-							<b>Excellent – </b> Student uses a clear voice so that all audience members can hear presentation <b>(+4)</b>
+							<span class="badge badge-primary badge-pill">+4</span><b> Excellent – </b> Student uses a clear voice so that all audience members can hear presentation 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbElocutionG" Text="" Checked="false" GroupName="RadioGroupEl" runat="server" onclick="Elocution(this, 3)" />
-							<b>Good – </b> Student’s voice is clear. Most audience members can hear presentation. <b>(+3)</b>
+							<span class="badge badge-primary badge-pill">+3</span><b> Good – </b> Student’s voice is clear. Most audience members can hear presentation. 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbElocutionF" Text="" Checked="false" GroupName="RadioGroupEl" runat="server" onclick="Elocution(this, 2)" />
-							<b>Fair – </b> Student’s voice is low. Audience has difficulty hearing presentation. <b>(+2)</b>
+							<span class="badge badge-primary badge-pill">+2</span><b> Fair – </b> Student’s voice is low. Audience has difficulty hearing presentation. 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbElocutionP" Text="" Checked="false" GroupName="RadioGroupEl" runat="server" onclick="Elocution(this, 1)" />
-							<b>Poor – </b> Student mumbles, speaks too quietly for a majority of audience to hear. <b>(+1)</b>
+							<span class="badge badge-primary badge-pill">+1</span><b> Poor – </b> Student mumbles, speaks too quietly for a majority of audience to hear. 
 						</label>
 					</div>
 
@@ -651,8 +664,8 @@
 		  </div> 
 
 
-		  <div class="card text-white bg-warning" >
-			  <h3 class="card-header">Technical</h3>
+		  <div id="tres" class="card mb-3" style="background-color:#222930; color: #E3AE57;  font-size: large" >
+              <h3 class="card-header"><span class="badge badge-primary badge-pill">4. Technical / ideas: select the points obtained by the student for each criteria </span></h3>
 			  <div class="card-body">
 
 				<fieldset>
@@ -661,25 +674,25 @@
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbKnowledgeE" Text="" Checked="false" GroupName="RadioGroupK" runat="server" onclick="Knowledge(this, 4)" />
-							<b>Excellent – </b> Demonstrate clear knowledge and understanding of the subject <b>(+4)</b>
+							<span class="badge badge-primary badge-pill">+4</span><b> Excellent – </b> Demonstrate clear knowledge and understanding of the subject 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbKnowledgeG" Text="" Checked="false" GroupName="RadioGroupK" runat="server" onclick="Knowledge(this, 3)" />
-							<b>Good – </b> Show clear knowledge and understanding of most subject area <b>(+3)</b>
+							<span class="badge badge-primary badge-pill">+3</span><b> Good – </b> Show clear knowledge and understanding of most subject area 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbKnowledgeF" Text="" Checked="false" GroupName="RadioGroupK" runat="server" onclick="Knowledge(this, 2)" />
-							<b>Fair – </b> Show some knowledge and understanding of the subject area <b>(+2)</b>
+							<span class="badge badge-primary badge-pill">+2</span><b> Fair – </b> Show some knowledge and understanding of the subject area 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbKnowledgeP" Text="" Checked="false" GroupName="RadioGroupK" runat="server" onclick="Knowledge(this, 1)" />
-							<b>Poor – </b> Show no knowledge and understanding of the subject area <b>(+1)</b>
+							<span class="badge badge-primary badge-pill">+1</span><b> Poor – </b> Show no knowledge and understanding of the subject area 
 						</label>
 					</div>
 
@@ -690,25 +703,25 @@
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbResearchE" Text="" Checked="false" GroupName="RadioGroupRs" runat="server" onclick="Research(this, 4)" />
-							<b>Excellent – </b> Evidence of thorough research and preparation <b>(+4)</b>
+							<span class="badge badge-primary badge-pill">+4</span><b> Excellent – </b> Evidence of thorough research and preparation 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbResearchG" Text="" Checked="false" GroupName="RadioGroupRs" runat="server" onclick="Research(this, 3)" />
-							<b>Good – </b> Evidence of sufficient research and preparation <b>(+3)</b>
+							<span class="badge badge-primary badge-pill">+3</span><b> Good – </b> Evidence of sufficient research and preparation 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbResearchF" Text="" Checked="false" GroupName="RadioGroupRs" runat="server" onclick="Research(this, 2)" />
-							<b>Fair – </b> Evidence of some research and preparation <b>(+2)</b>
+							<span class="badge badge-primary badge-pill">+2</span><b> Fair – </b> Evidence of some research and preparation 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbResearchP" Text="" Checked="false" GroupName="RadioGroupRs" runat="server" onclick="Research(this, 1)" />
-							<b>Poor – </b> Evidence of no research and preparation <b>(+1)</b>
+							<span class="badge badge-primary badge-pill">+1</span><b> Poor – </b> Evidence of no research and preparation 
 						</label>
 					</div>
 
@@ -719,25 +732,25 @@
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbDiscussionE" Text="" Checked="false" GroupName="RadioGroupDi" runat="server" onclick="Discussion(this, 4)" />
-							<b>Excellent – </b> Demonstrate thorough knowledge while discussing new ideas <b>(+4)</b>
+							<span class="badge badge-primary badge-pill">+4</span><b> Excellent – </b> Demonstrate thorough knowledge while discussing new ideas 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbDiscussionG" Text="" Checked="false" GroupName="RadioGroupDi" runat="server" onclick="Discussion(this, 3)" />
-							<b>Good – </b> Show sufficient knowledge while discussing new ideas <b>(+3)</b>
+							<span class="badge badge-primary badge-pill">+3</span><b> Good – </b> Show sufficient knowledge while discussing new ideas 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbDiscussionF" Text="" Checked="false" GroupName="RadioGroupDi" runat="server" onclick="Discussion(this, 2)" />
-							<b>Fair – </b> Show some knowledge while discussing new ideas <b>(+2)</b>
+							<span class="badge badge-primary badge-pill">+2</span><b> Fair – </b> Show some knowledge while discussing new ideas 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbDiscussionP" Text="" Checked="false" GroupName="RadioGroupDi" runat="server" onclick="Discussion(this, 1)" />
-							<b>Poor – </b> Show no knowledge while discussing new ideas <b>(+1)</b>
+							<span class="badge badge-primary badge-pill">+1</span><b> Poor – </b> Show no knowledge while discussing new ideas 
 						</label>
 					</div>
 
@@ -748,25 +761,25 @@
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbArgumentE" Text="" Checked="false" GroupName="RadioGroupAr" runat="server" onclick="Argument(this, 4)" />
-							<b>Excellent – </b> Opinion set out in a concise and persuasive manner <b>(+4)</b>
+							<span class="badge badge-primary badge-pill">+4</span><b> Excellent – </b> Opinion set out in a concise and persuasive manner 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbArgumentG" Text="" Checked="false" GroupName="RadioGroupAr" runat="server" onclick="Argument(this, 3)" />
-							<b>Good – </b> Opinion is not concise and persuasive manner <b>(+3)</b>
+							<span class="badge badge-primary badge-pill">+3</span><b> Good – </b> Opinion is not concise and persuasive manner 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbArgumentF" Text="" Checked="false" GroupName="RadioGroupAr" runat="server" onclick="Argument(this, 2)" />
-							<b>Fair – </b> Opinion is clearly demonstrated but not persuasive <b>(+2)</b>
+							<span class="badge badge-primary badge-pill">+2</span><b> Fair – </b> Opinion is clearly demonstrated but not persuasive 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbArgumentP" Text="" Checked="false" GroupName="RadioGroupAr" runat="server" onclick="Argument(this, 1)" />
-							<b>Poor – </b> Opinion is not demonstrated or highlighted <b>(+1)</b>
+							<span class="badge badge-primary badge-pill">+1</span><b> Poor – </b> Opinion is not demonstrated or highlighted 
 						</label>
 					</div>
 
@@ -777,25 +790,25 @@
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbQuestionsE" Text="" Checked="false" GroupName="RadioGroupQu" runat="server" onclick="Questions(this, 4)" />
-							<b>Excellent – </b> Responded very well to technical questions<b>(+4)</b>
+							<span class="badge badge-primary badge-pill">+4</span><b> Excellent – </b> Responded very well to technical questions
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbQuestionsG" Text="" Checked="false" GroupName="RadioGroupQu" runat="server" onclick="Questions(this, 3)" />
-							<b>Good – </b> Could answer most technical questions related to the presentation <b>(+3)</b>
+							<span class="badge badge-primary badge-pill">+3</span><b> Good – </b> Could answer most technical questions related to the presentation 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbQuestionsF" Text="" Checked="false" GroupName="RadioGroupQu" runat="server" onclick="Questions(this, 2)" />
-							<b>Fair – </b> Could answer some technical questions related to the presentation <b>(+2)</b>
+							<span class="badge badge-primary badge-pill">+2</span><b> Fair – </b> Could answer some technical questions related to the presentation 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
 							<asp:RadioButton class="radioClass" id="rbQuestionsP" Text="" Checked="false" GroupName="RadioGroupQu" runat="server" onclick="Questions(this, 1)" />
-							<b>Poor – </b> Could not answer any technical questions related to the presentation <b>(+1)</b>
+							<span class="badge badge-primary badge-pill">+1</span><b> Poor – </b> Could not answer any technical questions related to the presentation 
 						</label>
 					</div>
 
@@ -1101,27 +1114,100 @@
 		</div>
 
 
+        <div  class="container">
+		    <div  id="cuatro"  class="card mb-3" style="background-color:#222930; color: #D43F3F;  font-size: large" >
+                <h3 class="card-header"><span class="badge badge-primary badge-pill">5. Download the file: when finish the evaluation save and download the format </span></h3>
+		        <asp:Button ID="btnSaveDoc" runat="server" class="btn btn-primary btn-lg" Text="Save & Generate Report" OnClick="btnSaveDoc_Click" />
+		    </div>
+        </div>
 
-		<div class="container mb-5">
+        <div class="container" style="position: fixed; left: 83%; top: 32%; width:30%; z-index: 10; " >
 
-		<asp:Button ID="btnSaveDoc" runat="server" class="btn btn-primary btn-lg" Text="Save & Generate Report" OnClick="btnSaveDoc_Click" />
- 
+			<table class="table table-hover bg-dark">
+				<tbody>
+					<tr class="table-active">
+						<td><div style="background-color:#222930; color: #9EDE3A;  font-size: large" >Marking process steps:</div></td>
+                    </tr>
+				</tbody>
+			</table>
+
+		</div>
+
+        <div class="container" style="position: fixed; left: 83%; top: 38%; width:30%; z-index: 10; " >
+
+			<table class="table table-hover bg-dark">
+				<tbody>
+					<tr class="table-active">
+						<td><div style="background-color:#222930; color: #D43F3F;  font-size: large" ><a href="#zero" >1. Basic info</a></div></td>
+                    </tr>
+				</tbody>
+			</table>
+
 		</div>
 		
+        <div class="container" style="position: fixed; left: 83%; top: 44%; width:30%; z-index: 10; " >
 
-		<div class="container" style="position: fixed; left: 71%; top: 78%; width:30%; z-index: 10; " >
+			<table class="table table-hover bg-dark">
+				<tbody>
+					<tr class="table-active">
+						<td><div style="background-color:#222930; color: #D43F3F;  font-size: large" ><a href="#uno" >2. Content structure / ideas</a></div></td>
+                    </tr>
+				</tbody>
+			</table>
+
+		</div>
+
+         <div class="container" style="position: fixed; left: 83%; top: 50%; width:30%; z-index: 10; " >
+
+			<table class="table table-hover bg-dark">
+				<tbody>
+					<tr class="table-active">
+						<td><div style="background-color:#222930; color: #00ACE9;  font-size: large" ><a href="#dos" >3. Language and Delivery</a></div></td>
+                    </tr>
+				</tbody>
+			</table>
+
+		</div>
+
+         <div class="container" style="position: fixed; left: 83%; top: 56%; width:30%; z-index: 10; " >
+
+			<table class="table table-hover bg-dark">
+				<tbody>
+					<tr class="table-active">
+						<td><div style="background-color:#222930; color: #E3AE57;  font-size: large" ><a href="#tres" >4. Technical</a></div></td>
+                    </tr>
+				</tbody>
+			</table>
+
+		</div>
+
+
+        <div class="container" style="position: fixed; left: 83%; top: 62%; width:30%; z-index: 10; " >
+
+			<table class="table table-hover bg-dark">
+				<tbody>
+					<tr class="table-active">
+						<td><div style="background-color:#222930; color: #E3AE57;  font-size: large" ><a href="#cuatro" >5. Download the file</a></div></td>
+                    </tr>
+				</tbody>
+			</table>
+
+		</div>
+
+		<div class="container" style="position: fixed; left: 83%; top: 70%; width:30%; z-index: 10; " >
 
 			<table class="table table-hover bg-dark">
 				<tbody>
 					<tr class="table-active">
 						<td><h4 style="color: orangered" >TOTAL MARKS:</h4></td>
+                    </tr>
+                    <tr>
 						<td><h4><div id="dvTotalMarks" runat="server" style="font-size:larger; color: orangered" ></div></h4></td>
 					</tr>
 				</tbody>
 			</table>
 			
-			<asp:HiddenField ID="hdfTotalMarks" runat="server" />          
-			
+			<asp:HiddenField ID="hdfTotalMarks" runat="server" />          	
 
 		</div>
 
