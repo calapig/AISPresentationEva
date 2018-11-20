@@ -72,11 +72,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EvaluationSimple.aspx" />
     <Content Include="Evaluation.aspx" />
     <Content Include="Images\AISlogo.PNG" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EvaluationSimple.aspx.cs">
+      <DependentUpon>EvaluationSimple.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EvaluationSimple.aspx.designer.cs">
+      <DependentUpon>EvaluationSimple.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Evaluation.aspx.cs">
       <DependentUpon>Evaluation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

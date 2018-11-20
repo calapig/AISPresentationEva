@@ -10,7 +10,7 @@ using Xceed.Words.NET;
 
 namespace AISPresentationEva
 {
-    public partial class Evaluation : System.Web.UI.Page
+    public partial class EvaluationSimple : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,7 +26,7 @@ namespace AISPresentationEva
 
 
                 //string file = TxtStudentID.Text;
-                string fileName = string.Format(@"{0}-{1}-{2}-{3}-{4}.docx", TxtCourseCode.Text, txtSemester.Text, DateTime.Today.Year.ToString(), TxtStudentID.Text, TxtTopicId.Text);
+                string fileName = string.Format(@"{0}-{1}.docx", DateTime.Today.Year.ToString(), TxtStudentID.Text);
                 var doc = DocX.Create(Server.MapPath(fileName));
 
                 doc.InsertParagraph("Student ID: " + TxtStudentID.Text);
@@ -41,7 +41,7 @@ namespace AISPresentationEva
                 ////Create Table with 5 rows and 5 columns.  
                 Xceed.Words.NET.Table t = doc.AddTable(5, 5);
                 t.Alignment = Alignment.center;
-                //t.Design = TableDesign.ColorfulList;
+                t.Design = TableDesign.ColorfulList;
 
 
                 //int col, row;
@@ -536,8 +536,8 @@ namespace AISPresentationEva
 
                 #endregion
 
-                doc.InsertParagraph("TOTAL MARKS: " + hdfTotalMarks.Value + " /48");
-                doc.InsertParagraph("PERCENTAGE: " + Math.Round(Convert.ToDouble(hdfTotalMarks.Value) / 48 * 100, 0) + "%");
+                doc.InsertParagraph("TOTAL MARKS: " + hdfTotalMarks.Value );
+                
 
 
                 doc.Save();
@@ -645,15 +645,6 @@ namespace AISPresentationEva
         {
             args.IsValid = rbQuestionsE.Checked || rbQuestionsG.Checked || rbQuestionsF.Checked || rbQuestionsP.Checked;
         }
-
-
-
-
-
-
-
-
-
 
     }
 }
